@@ -18,7 +18,7 @@ train_generator = datagen.flow_from_directory(directory=train_data_dir,
 											   target_size=(img_width,img_height),
 											   classes=['dogs','cats'],
 											   class_mode='binary',
-											   batch_size=40)
+											   batch_size=4)
 
 validation_generator = datagen.flow_from_directory(directory=valid_data_dir,
 											   target_size=(img_width,img_height),
@@ -55,7 +55,7 @@ model.compile(loss='binary_crossentropy',optimizer='rmsprop',metrics=['accuracy'
 print('model complied!!')
 
 print('starting training....')
-training = model.fit_generator(generator=train_generator, steps_per_epoch=2048 // 16,epochs=20,validation_data=validation_generator,validation_steps=832//16)
+training = model.fit_generator(generator=train_generator, steps_per_epoch=2048 // 16,epochs=40,validation_data=validation_generator,validation_steps=832//16)
 
 print('training finished!!')
 
