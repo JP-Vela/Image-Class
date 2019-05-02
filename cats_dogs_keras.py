@@ -18,7 +18,7 @@ train_generator = datagen.flow_from_directory(directory=train_data_dir,
 											   target_size=(img_width,img_height),
 											   classes=['dogs','cats'],
 											   class_mode='binary',
-											   batch_size=4)
+											   batch_size=40)
 
 validation_generator = datagen.flow_from_directory(directory=valid_data_dir,
 											   target_size=(img_width,img_height),
@@ -50,7 +50,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
-model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
+model.compile(loss='binary_crossentropy',optimizer='rmsprop',metrics=['accuracy'])
 
 print('model complied!!')
 
