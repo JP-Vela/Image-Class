@@ -50,7 +50,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
-model.compile(loss='binary_crossentropy',optimizer='rmsprop',metrics=['accuracy'])
+model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
 
 print('model complied!!')
 
