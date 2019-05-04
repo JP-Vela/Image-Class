@@ -73,7 +73,7 @@ model =Sequential([
 #model.add(Dense(1))
 #model.add(Activation('softmax'))
 
-model.compile(Adam(lr=0.01),loss='binary_crossentropy',metrics=['accuracy'])
+model.compile(optimizers.Adam(lr=0.01),loss='binary_crossentropy',metrics=['accuracy'])
 
 print('model complied!!')
 
