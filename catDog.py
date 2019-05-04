@@ -11,6 +11,7 @@ img_width = 150
 img_height = 150
 train_data_dir = 'data/train'
 valid_data_dir = 'data/validation'
+train_batch_size = 5
 
 datagen = ImageDataGenerator(rescale = 1./255)
 
@@ -18,7 +19,7 @@ train_generator = datagen.flow_from_directory(directory=train_data_dir,
 											   target_size=(img_width,img_height),
 											   classes=['dogs','cats'],
 											   class_mode='binary',
-											   batch_size=16)
+											   batch_size=train_batch_size)
 
 validation_generator = datagen.flow_from_directory(directory=valid_data_dir,
 											   target_size=(img_width,img_height),
@@ -57,7 +58,7 @@ model.compile(optimizers.Adam(lr=0.01),loss='binary_crossentropy',metrics=['accu
 print('model complied!!')
 
 print('starting training....')
-training = model.fit_generator(generator=train_generator, steps_per_epoch=2048 // 16,epochs=40,validation_data=validation_generator,validation_steps=832//32)
+training = model.fit_generator(generator=train_generator, steps_per_epoch=2048 // train_batch_size,epochs=40,validation_data=validation_generator,validation_steps=832//32)
 
 print('training finished!!')
 
