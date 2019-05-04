@@ -11,7 +11,7 @@ img_width = 150
 img_height = 150
 train_data_dir = 'data/train'
 valid_data_dir = 'data/validation'
-train_batch_size = 1
+train_batch_size = 20
 
 datagen = ImageDataGenerator(rescale = 1./255)
 
