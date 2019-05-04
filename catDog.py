@@ -37,12 +37,14 @@ model =Sequential([
 	MaxPooling2D(pool_size=(2,2)),
 	Conv2D(32,(3,3), input_shape=(img_width, img_height, 3)),
 	Conv2D(32,(3,3), input_shape=(img_width, img_height, 3)),
-	Activation('sigmoid'),
+	Conv2D(32,(3,3), input_shape=(img_width, img_height, 3)),
+	#Activation('relu'),
 	MaxPooling2D(pool_size=(2,2)),
 	Conv2D(64,(3,3), input_shape=(img_width, img_height, 3)),
 	MaxPooling2D(pool_size=(2,2)),
 	Flatten(),
-	Dense(64, activation='sigmoid'),
+	Dense(62, activation='relu'),
+	Dense(64, activation='relu'),
 	Dense(1, activation='softmax')
 	#Activation('softmax')
 
@@ -71,7 +73,7 @@ model =Sequential([
 #model.add(Dense(1))
 #model.add(Activation('softmax'))
 
-model.compile(loss='binary_crossentropy',optimizer='rmsprop',metrics=['accuracy'])
+model.compile(Adam(lr=0.01),loss='binary_crossentropy',metrics=['accuracy'])
 
 print('model complied!!')
 
