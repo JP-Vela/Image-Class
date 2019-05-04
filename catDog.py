@@ -11,7 +11,7 @@ img_width = 150
 img_height = 150
 train_data_dir = 'data/train'
 valid_data_dir = 'data/validation'
-train_batch_size = 5
+train_batch_size = 1
 
 datagen = ImageDataGenerator(rescale = 1./255)
 
@@ -53,12 +53,12 @@ model =Sequential([
 
 ])
 
-model.compile(optimizers.Adam(lr=0.01),loss='binary_crossentropy',metrics=['accuracy'])
+model.compile(optimizers.Adam(lr=0.0001),loss='binary_crossentropy',metrics=['accuracy'])
 
 print('model complied!!')
 
 print('starting training....')
-training = model.fit_generator(generator=train_generator, steps_per_epoch=2048 // train_batch_size,epochs=40,validation_data=validation_generator,validation_steps=832//32)
+training = model.fit_generator(generator=train_generator, steps_per_epoch=2048 // train_batch_size,epochs=40,validation_data=validation_generator,validation_steps=832//32, verbose=3)
 
 print('training finished!!')
 
