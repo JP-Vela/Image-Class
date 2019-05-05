@@ -141,7 +141,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 # In[18]:
 
 
-model.fit(X,y, validation_split=0.1, epochs=20)
+model.fit(X,y, validation_split=0.1, epochs=7)
 
 
 # In[ ]:
