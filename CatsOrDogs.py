@@ -15,7 +15,7 @@ from keras.models import Sequential
 from keras.metrics import categorical_crossentropy
 
 
-DATADIR = "/Users/johnpaul/Documents/Programming/MachineLearning/Image-Class2/data/train/"
+DATADIR = "data/train/"
 CATEGORIES = ["dogs","cats"]
 
 for category in CATEGORIES:
