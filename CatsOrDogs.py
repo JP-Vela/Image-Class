@@ -116,10 +116,10 @@ model.add(Conv2D(62, (3,3), input_shape=X.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
-model.add(Conv2D(62, (3,3)))
-model.add(Conv2D(62, (3,3)))
-model.add(Conv2D(62, (3,3)))
-model.add(Conv2D(62, (3,3)))
+model.add(Conv2D(32, (3,3)))
+model.add(Conv2D(32, (3,3)))
+model.add(Conv2D(32, (3,3)))
+model.add(Conv2D(32, (3,3)))
 
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
@@ -146,7 +146,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 # In[18]:
 
 
-model.fit(X,y, validation_split=0.3, epochs=20)
+model.fit(X,y, validation_split=0.3, epochs=15)
 
 
 # In[ ]:
