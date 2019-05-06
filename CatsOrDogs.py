@@ -131,7 +131,7 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 
 model.add(Flatten())
 model.add(Dense(64))
-model.add(Dropout(0.2))
+model.add(Dropout(0.5))
 model.add(Activation('relu'))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
@@ -146,7 +146,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 # In[18]:
 
 
-model.fit(X,y, validation_split=0.05, epochs=15)
+model.fit(X,y, validation_split=0.3, epochs=20)
 
 
 # In[ ]:
