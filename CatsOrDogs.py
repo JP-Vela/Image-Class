@@ -115,14 +115,18 @@ model = Sequential()
 model.add(Conv2D(120, (3,3), input_shape=X.shape[1:]))
 model.add(Conv2D(120, (3,3)))
 model.add(Conv2D(120, (3,3)))
-model.add(Conv2D(120, (3,3)))
+
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 #model.add(Conv2D(84, (3,3)))
 
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
 model.add(Conv2D(120, (3,3)))
 model.add(Conv2D(120, (3,3)))
 model.add(Conv2D(120, (3,3)))
+
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
@@ -138,7 +142,7 @@ model.add(Activation('sigmoid'))
 # In[17]:
 
 
-model.compile(optimizers.Adam(lr=0.001), loss='binary_crossentropy', metrics=['accuracy'])
+model.compile(optimizers.Adam(), loss='binary_crossentropy', metrics=['accuracy'])
 
 
 # In[18]:
