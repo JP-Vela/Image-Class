@@ -119,19 +119,20 @@ model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Conv2D(120, (3,3)))
 model.add(Conv2D(120, (3,3)))
 model.add(Conv2D(120, (3,3)))
-model.add(Conv2D(84, (3,3)))
+#model.add(Conv2D(84, (3,3)))
 
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
-model.add(Conv2D(64, (3,3)))
+model.add(Conv2D(120, (3,3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
 
 model.add(Flatten())
-#model.add(Dropout(0.5))
-#model.add(Activation('relu'))
+model.add(Dense(84))
+model.add(Dropout(0.5))
+model.add(Activation('relu'))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
