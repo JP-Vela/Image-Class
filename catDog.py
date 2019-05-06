@@ -33,42 +33,13 @@ validation_generator = datagen.flow_from_directory(directory=valid_data_dir,
 
 model =Sequential([
 	Conv2D(filters=32, kernel_size=3, activation='relu', input_shape=(img_width, img_height, 3)),
-	Conv2D(filters=32, kernel_size=3, activation='relu'),
-	Conv2D(filters=32, kernel_size=3, activation='relu'),
-	Conv2D(filters=42, kernel_size=3, activation='relu'),
-	Conv2D(filters=42, kernel_size=3, activation='relu'),
-	Conv2D(filters=42, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
+	Conv2D(filters=128, kernel_size=3, activation='relu'),
+	Conv2D(filters=128, kernel_size=3, activation='relu'),
+	Conv2D(filters=128, kernel_size=3, activation='relu'),
 
-	MaxPooling2D(pool_size=2),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-
-	MaxPooling2D(pool_size=2),
-
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-	Conv2D(filters=52, kernel_size=3, activation='relu'),
-
-	MaxPooling2D(pool_size=2),
-
-
-
-	Conv2D(filters=64, kernel_size=3, activation='relu'),
-	Conv2D(filters=64, kernel_size=3, activation='relu'),
-	MaxPooling2D(pool_size=2),
-	#Dropout(0.2),
 	Flatten(),
 	Dense(64,activation='relu'),
-	Dense(2,activation='softmax')
+	Dense(1,activation='softmax')
 
 ])
 
