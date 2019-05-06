@@ -140,7 +140,7 @@ model.add(Activation('sigmoid'))
 # In[17]:
 
 
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+model.compile(Adam(lr=0.001), loss='binary_crossentropy', metrics=['accuracy'])
 
 
 # In[18]:
